@@ -4,15 +4,10 @@ import {
   Route,
   useNavigate,
 } from "react-router-dom";
-import { useState } from "react";
 import "./App.css";
 import "./index.css";
-
-const messages = [
-  "Learn React ⚛️",
-  "Apply for jobs 💼",
-  "Invest your new income 🤑",
-];
+import Steps from "./Steps.jsx";
+import DatePicker from "./DatePicker.jsx";
 
 function App() {
   return (
@@ -20,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/steps" element={<Steps />} />
-        <Route path="/pick-date" element={<DatePickerScreen />} />
+        <Route path="/pick-date" element={<DatePicker />} />
       </Routes>
     </Router>
   );
@@ -51,63 +46,6 @@ function Home() {
           Pick Date
         </button>
       </div>
-    </div>
-  );
-}
-
-function Steps() {
-  const [step, setStep] = useState(1);
-  const [isOpen, setIsOpen] = useState(true);
-
-  function handlePrev() {
-    setStep((prevStep) => Math.max(prevStep - 1, 1));
-  }
-
-  function handleNext() {
-    setStep((prevStep) => Math.min(prevStep + 1, messages.length));
-  }
-
-  return (
-    <>
-      <button className="close" onClick={() => setIsOpen((is) => !is)}>
-        &times;
-      </button>
-      {isOpen && (
-        <div className="steps">
-          <div className="numbers">
-            <div className={step >= 1 ? "active" : ""}>1</div>
-            <div className={step >= 2 ? "active" : ""}>2</div>
-            <div className={step >= 3 ? "active" : ""}>3</div>
-          </div>
-
-          <p className="message">
-            Step {step}: {messages[step - 1]}
-          </p>
-          <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7950f2", color: "white" }}
-              onClick={handlePrev}
-            >
-              Prev
-            </button>
-            <button
-              style={{ backgroundColor: "#7950f2", color: "white" }}
-              onClick={handleNext}
-            >
-              Next
-            </button>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-function DatePickerScreen() {
-  return (
-    <div className="date-picker">
-      <h2>Pick a Date</h2>
-      <p>Ez itt a dátumválasztó képernyő 🚀</p>
     </div>
   );
 }
