@@ -1,3 +1,9 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 import "./index.css";
@@ -9,25 +15,56 @@ const messages = [
 ];
 
 function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/steps" element={<Steps />} />
+        <Route path="/pick-date" element={<DatePickerScreen />} />
+      </Routes>
+    </Router>
+  );
+}
+
+function Home() {
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <h1>Welcome to the Launcher!</h1>
+      <div className="buttons">
+        <button
+          style={{ backgroundColor: "grey", color: "white" }}
+          onClick={() => navigate("/steps")}
+        >
+          Steps
+        </button>
+      </div>
+
+      <Spacer height="10px" />
+
+      <div className="buttons">
+        <button
+          style={{ backgroundColor: "grey", color: "white" }}
+          onClick={() => navigate("/pick-date")}
+        >
+          Pick Date
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function Steps() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
   function handlePrev() {
-    setStep((prevStep) => {
-      if (prevStep > 1) {
-        return prevStep - 1;
-      }
-      return prevStep;
-    });
+    setStep((prevStep) => Math.max(prevStep - 1, 1));
   }
 
   function handleNext() {
-    setStep((prevStep) => {
-      if (prevStep < messages.length) {
-        return prevStep + 1;
-      }
-      return prevStep;
-    });
+    setStep((prevStep) => Math.min(prevStep + 1, messages.length));
   }
 
   return (
@@ -64,6 +101,19 @@ function App() {
       )}
     </>
   );
+}
+
+function DatePickerScreen() {
+  return (
+    <div className="date-picker">
+      <h2>Pick a Date</h2>
+      <p>Ez itt a dátumválasztó képernyő 🚀</p>
+    </div>
+  );
+}
+
+function Spacer({ height = "10px" }) {
+  return <div style={{ height }} />;
 }
 
 export default App;
