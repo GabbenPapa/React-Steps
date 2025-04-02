@@ -89,3 +89,37 @@ h3 {
 .close:hover {
   color: #7950f2;
 }
+
+div.date-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.date-text {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}

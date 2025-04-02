@@ -32,7 +32,7 @@ export function Steps() {
           </div>
 
           <p className="message">
-            Step {step}: {messages[step - 1]}
+            Step {step}: {messages[step - 1]}7950f2
           </p>
           <div className="buttons">
             <button

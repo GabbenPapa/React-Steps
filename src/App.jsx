@@ -27,25 +27,27 @@ function Home() {
   return (
     <div>
       <h1>Welcome to the Launcher!</h1>
-      <div className="buttons">
-        <button
-          style={{ backgroundColor: "grey", color: "white" }}
-          onClick={() => navigate("/steps")}
-        >
-          Steps
-        </button>
-      </div>
+      <ul>
+        <div className="buttons">
+          <button
+            style={{ backgroundColor: "grey", color: "white" }}
+            onClick={() => navigate("/steps")}
+          >
+            Steps
+          </button>
+        </div>
 
-      <Spacer height="10px" />
+        <Spacer height="10px" />
 
-      <div className="buttons">
-        <button
-          style={{ backgroundColor: "grey", color: "white" }}
-          onClick={() => navigate("/pick-date")}
-        >
-          Pick Date
-        </button>
-      </div>
+        <div className="buttons">
+          <button
+            style={{ backgroundColor: "grey", color: "white" }}
+            onClick={() => navigate("/pick-date")}
+          >
+            Pick Date
+          </button>
+        </div>
+      </ul>
     </div>
   );
 }
