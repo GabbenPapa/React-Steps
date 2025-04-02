@@ -35,16 +35,14 @@ function Counter() {
   return (
     <div className="counter-container">
       <div className="counter-controls">
-        <div className="buttons">
+        <div className="counter-row">
           <button
             onClick={DecreaseStep}
             style={{ backgroundColor: "#7950f2", color: "white" }}
           >
             -
           </button>
-        </div>
-        <span>Step: {step}</span>
-        <div className="buttons">
+          <span>Step: {step}</span>
           <button
             onClick={IncreaseStep}
             style={{ backgroundColor: "#7950f2", color: "white" }}
@@ -52,16 +50,14 @@ function Counter() {
             +
           </button>
         </div>
-        <div className="buttons">
+        <div className="counter-row">
           <button
             onClick={DecreaseCounter}
             style={{ backgroundColor: "#7950f2", color: "white" }}
           >
             -
           </button>
-        </div>
-        <span>Count: {count}</span>
-        <div className="buttons">
+          <span>Count: {count}</span>
           <button
             onClick={IncreaseCounter}
             style={{ backgroundColor: "#7950f2", color: "white" }}
