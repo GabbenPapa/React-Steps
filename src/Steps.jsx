@@ -31,27 +31,48 @@ export function Steps() {
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
 
-          <p className="message">
-            Step {step}: {messages[step - 1]}7950f2
-          </p>
+          <StepMessage step={step}>{messages[step - 1]}</StepMessage>
+
           <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7950f2", color: "white" }}
+            <PagerButton
+              bgColor="#7950f2"
+              txtColor="white"
               onClick={handlePrev}
             >
-              Prev
-            </button>
-            <button
-              style={{ backgroundColor: "#7950f2", color: "white" }}
+              <span>👈 </span>Prev
+            </PagerButton>
+            <PagerButton
+              bgColor="#7950f2"
+              txtColor="white"
               onClick={handleNext}
             >
-              Next
-            </button>
+              Next <span>👉</span>
+            </PagerButton>
           </div>
         </div>
       )}
     </>
   );
+
+  function StepMessage({ step, children }) {
+    return (
+      <p className="message">
+        <h3>Step{step}</h3>
+        {children}
+      </p>
+    );
+  }
+
+  function PagerButton({ bgColor, txtColor, onClick, children }) {
+    return (
+      <button
+        style={{ backgroundColor: bgColor, color: txtColor }}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    );
+  }
 }
 
 export default Steps;
