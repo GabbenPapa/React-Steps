@@ -33,48 +33,50 @@ function Counter() {
   }
 
   return (
-    <div className="counter-container">
-      <div className="counter-controls">
-        <div className="counter-row">
-          <button
-            onClick={DecreaseStep}
-            style={{ backgroundColor: "#7950f2", color: "white" }}
-          >
-            -
-          </button>
-          <span>Step: {step}</span>
-          <button
-            onClick={IncreaseStep}
-            style={{ backgroundColor: "#7950f2", color: "white" }}
-          >
-            +
-          </button>
+    <div className="card">
+      <div className="counter-container">
+        <div className="counter-controls">
+          <div className="counter-row">
+            <button
+              onClick={DecreaseStep}
+              style={{ backgroundColor: "#7950f2", color: "white" }}
+            >
+              -
+            </button>
+            <span>Step: {step}</span>
+            <button
+              onClick={IncreaseStep}
+              style={{ backgroundColor: "#7950f2", color: "white" }}
+            >
+              +
+            </button>
+          </div>
+          <div className="counter-row">
+            <button
+              onClick={DecreaseCounter}
+              style={{ backgroundColor: "#7950f2", color: "white" }}
+            >
+              -
+            </button>
+            <span>Count: {count}</span>
+            <button
+              onClick={IncreaseCounter}
+              style={{ backgroundColor: "#7950f2", color: "white" }}
+            >
+              +
+            </button>
+          </div>
         </div>
-        <div className="counter-row">
-          <button
-            onClick={DecreaseCounter}
-            style={{ backgroundColor: "#7950f2", color: "white" }}
-          >
-            -
-          </button>
-          <span>Count: {count}</span>
-          <button
-            onClick={IncreaseCounter}
-            style={{ backgroundColor: "#7950f2", color: "white" }}
-          >
-            +
-          </button>
-        </div>
-      </div>
 
-      <p className="date-text">
-        {count === 0
-          ? "Today"
-          : count > 0
-          ? `${count} days from today is`
-          : `${Math.abs(count)} days ago was`}
-      </p>
-      <p className="date-text">Date: {date.toDateString()}</p>
+        <p className="date-text">
+          {count === 0
+            ? "Today"
+            : count > 0
+            ? `${count} days from today is`
+            : `${Math.abs(count)} days ago was`}
+        </p>
+        <p className="date-text">Date: {date.toDateString()}</p>
+      </div>
     </div>
   );
 }
