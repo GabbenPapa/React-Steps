@@ -9,6 +9,7 @@ import "./index.css";
 import Steps from "./Steps.jsx";
 import DatePicker from "./DatePicker.jsx";
 import FlashCards from "./flashcards.jsx";
+import Accordion from "./Accordion.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/steps" element={<Steps />} />
         <Route path="/pick-date" element={<DatePicker />} />
         <Route path="/flashcards" element={<FlashCards />} />
+        <Route path="/accordion" element={<Accordion />} />
       </Routes>
     </Router>
   );
@@ -58,6 +60,17 @@ function Home() {
             onClick={() => navigate("/flashcards")}
           >
             Flashcards
+          </button>
+        </div>
+
+        <Spacer height="10px" />
+
+        <div className="buttons">
+          <button
+            style={{ backgroundColor: "grey", color: "white" }}
+            onClick={() => navigate("/accordion")}
+          >
+            Accordion
           </button>
         </div>
       </ul>
