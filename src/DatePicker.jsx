@@ -84,7 +84,9 @@ function Counter() {
               Reset
             </button>
           </div>
-        ) : null}
+        ) : (
+          <div style={{ height: "24px" }}></div>
+        )}
       </div>
     </div>
   );
