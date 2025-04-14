@@ -11,6 +11,7 @@ import DatePicker from "./DatePicker.jsx";
 import FlashCards from "./flashcards.jsx";
 import Accordion from "./Accordion.jsx";
 import StarRating from "./StarRating.jsx";
+import TextExpander from "./TextExpander.jsx";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/flashcards" element={<FlashCards />} />
         <Route path="/accordion" element={<Accordion />} />
         <Route path="/star" element={<StarRating />} />
+        <Route path="/text-expander" element={<TextExpander />} />
       </Routes>
     </Router>
   );
@@ -34,6 +36,8 @@ function Home() {
     <div>
       <h1>Welcome to the Launcher!</h1>
       <ul>
+        <Spacer height="10px" />
+
         <div className="buttons">
           <button
             style={{ backgroundColor: "grey", color: "white" }}
@@ -75,6 +79,7 @@ function Home() {
             Accordion
           </button>
         </div>
+
         <Spacer height="10px" />
 
         <div className="buttons">
@@ -83,6 +88,17 @@ function Home() {
             onClick={() => navigate("/star")}
           >
             Stars
+          </button>
+        </div>
+
+        <Spacer height="10px" />
+
+        <div className="buttons">
+          <button
+            style={{ backgroundColor: "grey", color: "white" }}
+            onClick={() => navigate("/text-expander")}
+          >
+            Text Expander
           </button>
         </div>
       </ul>
