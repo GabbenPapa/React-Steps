@@ -12,6 +12,7 @@ import FlashCards from "./Flashcards.jsx";
 import Accordion from "./Accordion.jsx";
 import StarRating from "./StarRating.jsx";
 import TextExpander from "./TextExpander.jsx";
+import Exchanger from "./Exchanger.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/accordion" element={<Accordion />} />
         <Route path="/star" element={<StarRating />} />
         <Route path="/text-expander" element={<TextExpander />} />
+        <Route path="/exchange" element={<Exchanger />} />
       </Routes>
     </Router>
   );
@@ -99,6 +101,17 @@ function Home() {
             onClick={() => navigate("/text-expander")}
           >
             Text Expander
+          </button>
+        </div>
+
+        <Spacer height="10px" />
+
+        <div className="buttons">
+          <button
+            style={{ backgroundColor: "grey", color: "white" }}
+            onClick={() => navigate("/exchange")}
+          >
+            Exchange
           </button>
         </div>
       </ul>
