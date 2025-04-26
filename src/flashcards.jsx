@@ -1,4 +1,4 @@
-import "./flashcards.css";
+import "./Flashcards.css";
 import React from "react";
 
 const questions = [

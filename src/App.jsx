@@ -8,7 +8,7 @@ import "./App.css";
 import "./index.css";
 import Steps from "./Steps.jsx";
 import DatePicker from "./DatePicker.jsx";
-import FlashCards from "./flashcards.jsx";
+import FlashCards from "./Flashcards.jsx";
 import Accordion from "./Accordion.jsx";
 import StarRating from "./StarRating.jsx";
 import TextExpander from "./TextExpander.jsx";
